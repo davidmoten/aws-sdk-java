@@ -10,17 +10,17 @@ jdk:
   - openjdk6
   - oraclejdk8
 env:
-  - MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"
-  - MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin,\!aws-java-sdk-opensdk MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"
+  - MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1.2"
+  - MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin,\!aws-java-sdk-opensdk MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1.2"
 # Exclude certain items in the matrix as some modules only build with Java8
 matrix:
   exclude:
     - jdk: openjdk6
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1.2"
     - jdk: openjdk7
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1.2"
     - jdk: oraclejdk7
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2i"
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS="-XX:MaxPermSize=256m -Dhttps.protocols=TLSv1.2i"
     - jdk: oraclejdk8
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin,\!aws-java-sdk-opensdk MAVEN_OPTS=-XX:MaxPermSize=256m
 
