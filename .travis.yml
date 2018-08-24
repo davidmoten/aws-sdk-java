@@ -30,4 +30,4 @@ notifications:
 install: /bin/true
 sudo: required
 dist: precise
-script: mvn install -pl ${MODULES_TO_SKIP} -Dhttps.protocols=TLSv1.2
+script: MAVEN_OPTS="$MAVEN_OPTS -Dhttps.protocols=TLSv1.2" mvn install -pl ${MODULES_TO_SKIP}
